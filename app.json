@@ -889,19 +889,22 @@
         "measure_moisture",
         "measure_battery"
       ],
+      "connectivity": [
+        "ble"
+      ],
       "pair": [
         {
-          "id": "start"
-        },
-        {
-          "id": "list_my_devices",
+          "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "next": "add_my_devices"
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
           }
         },
         {
-          "id": "add_my_devices",
+          "id": "add_devices",
           "template": "add_devices"
         }
       ],
@@ -1177,19 +1180,22 @@
         "measure_nutrition",
         "measure_moisture"
       ],
+      "connectivity": [
+        "ble"
+      ],
       "pair": [
         {
-          "id": "start"
-        },
-        {
-          "id": "list_my_devices",
+          "id": "list_devices",
           "template": "list_devices",
           "navigation": {
-            "next": "add_my_devices"
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
           }
         },
         {
-          "id": "add_my_devices",
+          "id": "add_devices",
           "template": "add_devices"
         }
       ],

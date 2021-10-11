@@ -1,6 +1,26 @@
+import {Driver} from 'homey';
 import {MiFloraDriver} from '../../lib/MiFloraDriver';
 
 class MiFloraSensorDriver extends MiFloraDriver {
+
+    async onPair(session: Driver.PairSession) {
+        console.log('onPair!');
+        session.setHandler('list_devices', async function () {
+            return [{
+                name: 'test',
+                id: 'test'
+            }]
+        });
+    }
+
+    // async onPairListDevices(): Promise<MiFloraDevice[]> {
+    async onPairListDevices(): Promise<any[]> {
+        console.log('onPairListDevices!');
+        return [{
+            name: 'test',
+            id: 'test'
+        }];
+    }
 
     getMiFloraBleIdentification() {
         return 'Flower care';

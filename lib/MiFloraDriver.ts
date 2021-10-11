@@ -1,9 +1,12 @@
 import {Driver} from 'homey';
-import PairSession from 'homey/lib/PairSession';
 import {MiFloraDevice} from './models/MiFloraDevice';
 import {DeviceSettings} from './models/DeviceSettings';
 
 export abstract class MiFloraDriver extends Driver {
+
+    async onInit(): Promise<void> {
+        console.log('Successfully init MiFloraDriver');
+    }
 
     /**
      * the name of the BLE for identification
@@ -28,7 +31,7 @@ export abstract class MiFloraDriver extends Driver {
     /**
      * render a list of devices for pairing to homey
      */
-    async onPair(session: PairSession) {
+    async onPairListDevices(): Promise<MiFloraDevice[]> {
         const {version} = this.homey.manifest;
         let index = 0;
         let devices: MiFloraDevice[] = [];

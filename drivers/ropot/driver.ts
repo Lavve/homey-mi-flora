@@ -1,6 +1,25 @@
+import {Driver} from 'homey';
 import {MiFloraDriver} from '../../lib/MiFloraDriver';
 
 class MiFloraRopotDriver extends MiFloraDriver {
+
+    async onPair(session: Driver.PairSession) {
+        session.setHandler('list_devices', async function () {
+            return [{
+                name: 'test',
+                id: 'test'
+            }]
+        });
+    }
+
+    // async onPairListDevices(): Promise<MiFloraDevice[]> {
+    async onPairListDevices(): Promise<any[]> {
+        console.log('pair!');
+        return [{
+            name: 'test',
+            id: 'test'
+        }];
+    }
 
     getMiFloraBleIdentification() {
         return 'ropot';

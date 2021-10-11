@@ -40,7 +40,7 @@ class HomeyMiFloraApp extends App {
     onInit(): Promise<void> {
         console.log('Successfully init HomeyMiFlora version: %s', this.homey.manifest.version);
         this.devices = [];
-
+        /*
         this.deviceSensorUpdated = this.homey.flow.getDeviceTriggerCard('device_sensor_updated');
         this.globalSensorUpdated = this.homey.flow.getTriggerCard('sensor_updated');
         this.deviceSensorChanged = this.homey.flow.getDeviceTriggerCard('device_sensor_changed');
@@ -54,7 +54,6 @@ class HomeyMiFloraApp extends App {
         this.deviceSensorOutsideThreshold = this.homey.flow.getDeviceTriggerCard('device_sensor_outside_threshold');
         this.update = this.homey.flow.getActionCard('update');
 
-        /*
         this.update.registerRunListener(async () => {
             try {
                 return Promise.resolve(await this._synchroniseSensorData());

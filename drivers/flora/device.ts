@@ -1,6 +1,7 @@
 import { Device } from 'homey';
+import {MiFloraDevice} from '../../lib/MiFloraDevice';
 
-class MiFloraSensorDevice extends Device {
+class MiFloraSensorDevice extends MiFloraDevice {
   /**
    * onInit is called when the device is initialized.
    */
